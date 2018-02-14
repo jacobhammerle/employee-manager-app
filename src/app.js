@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import firebase from 'firebase';
 import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
 	componentWillMount() {
@@ -16,7 +17,7 @@ class App extends Component {
 		    storageBucket: 'employee-manager-4bbe0.appspot.com',
 		    messagingSenderId: '537570116464'
 		};
-		
+
 		firebase.initializeApp(config);
 	}
 
@@ -25,6 +26,7 @@ class App extends Component {
 			<Provider store={createStore(reducers)}>
 				<View>
 					<Header headerText="Manager" />
+					<LoginForm />
 				</View>
 			</Provider>
 		)
